@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -12,16 +13,11 @@ body{
     text-align: center;
     background-color: #2b1d0f;
     color: #fff;
-    /* background-image:url(image/Cooking-Recipe.png) ;
-    background-repeat: no-repeat;
-    background-size:cover; */  
 }
 #b-img{
   justify-content: center;
-  
 }
 header{
-   
     position:sticky;
     top: 0px;
 }
@@ -31,7 +27,11 @@ header{
     border-radius: 20px;
 }
 .recipe-app{
-   margin-left: -53%;
+   
+   display: block;
+}
+.recipe-app h1{
+   display: block !important;
 }
 header nav{
     background-color: #212121;
@@ -55,26 +55,36 @@ form input[type="text"]{
     flex-grow: 1;
     margin-right: 10px;
 }
-form input[type="text"],button[type="submit"]{
+form input[type="text"],button[type="submit"], #categoryDropdown{
     border: none;
     font-size: 18px;
     padding: 10px;
     border-radius: 4px;
 }
 
-form button[type="submit"]{
+form button[type="submit"], #categoryDropdown{
     background-color: #f44336;
     color: #fff;
     cursor: pointer;
     transition:background-color 0.2s ease-in-out;
 }
-form button[type="submit"]:hover,
-.recipe button:hover,
-.recipe-close-Btn:hover{
+
+#categoryDropdown{
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#categoryDropdown:hover, form button[type="submit"]:hover,
+.recipe button:hover, .recipe-close-Btn:hover{
     background-color: #ff5c5c;
 }
 
-/* Main section */
 .recipe-container{
     text-align: center;
     margin-top: 20px;
@@ -85,9 +95,6 @@ form button[type="submit"]:hover,
     margin: 10px auto;
     padding: 20px;
     place-items: center;
-    
-    
-    
 }
 
 .recipe{
@@ -100,18 +107,11 @@ form button[type="submit"]:hover,
     cursor: pointer;
     max-width: 350px;
     transition:transform 0.3s ease-in-out;
- 
-    
 }
 
 .recipe:hover{
-    /* transform: scale(1.02); */
-    /* position:fixed; */
     box-shadow: 0px 0px 15px 1px white;
-
 }
-
-
 
 .recipe img{
     height: 300px;
@@ -142,20 +142,18 @@ form button[type="submit"]:hover,
     color: #fff;
 }
 
-/* Recipe Details */
 .recipe-details{
     display: none;
     position: fixed;
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
     background-color: #694c2f;
     border-radius: 12px;
     width: 40%;
     height: 60%;
     font-size: 20px;
-    transition: all 0.5s ease-in-out ;
+    transition: all 0.5s ease-in-out;
     overflow: scroll;
 }
 
@@ -166,7 +164,6 @@ form button[type="submit"]:hover,
     text-align: center;
     text-transform: uppercase;
     text-decoration: underline;
-  
 }
 
 .ingredientsList li{
@@ -175,7 +172,7 @@ form button[type="submit"]:hover,
     line-height:30px;
 }
 .recipeInstructions p {
-     line-height:30px;
+    line-height:30px;
     white-space: pre-line;
 }
 
@@ -200,24 +197,19 @@ form button[type="submit"]:hover,
     align-items: center;
 }
 
-
-/* Adding scrollbar to recipe details popup */
 .recipe-details::-webkit-scrollbar{
     width:10px;
 }
 .recipe-details::-webkit-scrollbar-thumb{
     background: #b5b5ba;
     border-radius: 16px;
-    -webkit-border-radius:16px;
 }
 
-/* Adding scrollbar to recipe body */
 body::-webkit-scrollbar{
     width:16px;
 }
 body::-webkit-scrollbar-thumb{
     background: #a1a1a1;
-   
 }
 
 body::-webkit-scrollbar-track{
@@ -228,10 +220,9 @@ body::-webkit-scrollbar-track{
     padding: 20px;
     font-size: 33px;
 }
-/* Responsive code */
+
 @media screen and (max-width:500px) {
     header{
-   
         position:sticky;
         top: 0px;
     }
@@ -255,7 +246,11 @@ body::-webkit-scrollbar-track{
         padding: 5px;
         font-size: 12px;
     }
-    
+    #categoryDropdown{
+        width: 100%;
+        font-size: 14px;
+        margin-top: 10px;
+    }
 }
 
 @media screen and (max-width:500px) {
@@ -263,8 +258,6 @@ body::-webkit-scrollbar-track{
         text-align: center;
     }
     .recipe-app{
-        /* margin-left: -53%; */
-        /* text-align: center; */
         text-align: center;
         margin-left: 9px;
      }
